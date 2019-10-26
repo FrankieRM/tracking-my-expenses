@@ -1,0 +1,23 @@
+{
+  "tmeApp": {
+    "wallet": {
+      "home": {
+        "title": "Wallets",
+        "createLabel": "Crear nuevo Wallet",
+        "createOrEditLabel": "Crear o editar Wallet",
+        "notFound": "No Wallets found"
+      },
+      "created": "Un nuevo Wallet ha sido creado con el identificador {{ param }}",
+      "updated": "Un Wallet ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Wallet ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Wallet {{ id }}?"
+      },
+      "detail": {
+        "title": "Wallet"
+      },
+      "description": "Description",
+      "walletType": "Wallet Type"
+    }
+  }
+}

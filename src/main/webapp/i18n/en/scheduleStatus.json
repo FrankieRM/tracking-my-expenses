@@ -1,0 +1,11 @@
+{
+  "tmeApp": {
+    "ScheduleStatus": {
+      "null": "",
+      "SCHEDULED": "SCHEDULED",
+      "PENDING": "PENDING",
+      "CONFIRMED": "CONFIRMED",
+      "CANCELED": "CANCELED"
+    }
+  }
+}

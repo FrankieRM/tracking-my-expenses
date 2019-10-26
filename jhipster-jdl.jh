@@ -1,0 +1,68 @@
+
+enum TransactionType {
+    INCOME, EXPENSE
+}
+
+entity Category {
+	id Long required,
+    description String required,
+    transactionType TransactionType required
+}
+
+enum WalletType {
+    CASH, BANK
+}
+
+entity Wallet {
+	id Long required,
+    description String required,
+	walletType WalletType required
+}
+
+entity Notification {
+	id Long required,
+    sameDay Boolean,
+    beforeDays Integer
+}
+
+enum TimeUnity {
+    DAYS, WEEKS, MONTHS, YEARS
+}
+
+enum ScheduleStatus {
+    SCHEDULED, PENDING, CONFIRMED, CANCELED
+}
+
+entity Transaction {
+	id Long required,
+    amount BigDecimal required,
+    instant Instant required,
+    description String,
+    observations String
+    transactionType TransactionType required
+}
+
+entity Schedule {
+	id Long required,
+    timeUnity TimeUnity,
+    frecuencyNumber Integer,
+    dayOfWeek String,
+    sameDay Boolean,
+    frecuencyOrdinalNumber String,
+    dueDate LocalDate,
+    limitDate LocalDate required,
+    scheduleStatus ScheduleStatus
+}
+
+relationship OneToOne {
+	Schedule{transaction required} to Transaction,
+    Schedule{notification required} to Notification,
+	Transaction{category required} to Category,
+	Transaction{sourceWallet required} to Wallet,
+	Transaction{destinationWallet} to Wallet
+}
+
+paginate Schedule, Transaction with infinite-scroll
+paginate Category, Notification, Wallet with pagination
+
+service Schedule, Transaction with serviceImpl

@@ -1,0 +1,9 @@
+{
+  "tmeApp": {
+    "WalletType": {
+      "null": "",
+      "CASH": "CASH",
+      "BANK": "BANK"
+    }
+  }
+}

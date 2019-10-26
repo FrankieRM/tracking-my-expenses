@@ -1,0 +1,24 @@
+{
+    "name": "Notification",
+    "fields": [
+        {
+            "fieldName": "sameDay",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "beforeDays",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20191026001008",
+    "entityTableName": "notification",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

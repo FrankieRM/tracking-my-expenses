@@ -1,0 +1,72 @@
+{
+    "name": "Schedule",
+    "fields": [
+        {
+            "fieldName": "timeUnity",
+            "fieldType": "TimeUnity",
+            "fieldValues": "DAYS,WEEKS,MONTHS,YEARS"
+        },
+        {
+            "fieldName": "frecuencyNumber",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "dayOfWeek",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sameDay",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "frecuencyOrdinalNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dueDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "limitDate",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "scheduleStatus",
+            "fieldType": "ScheduleStatus",
+            "fieldValues": "SCHEDULED,PENDING,CONFIRMED,CANCELED"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "transaction",
+            "otherEntityRelationshipName": "schedule",
+            "relationshipValidateRules": "required",
+            "relationshipName": "transaction",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "notification",
+            "otherEntityRelationshipName": "schedule",
+            "relationshipValidateRules": "required",
+            "relationshipName": "notification",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20191026001010",
+    "entityTableName": "schedule",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

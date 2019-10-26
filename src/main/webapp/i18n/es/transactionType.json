@@ -1,0 +1,9 @@
+{
+  "tmeApp": {
+    "TransactionType": {
+      "null": "",
+      "INCOME": "INCOME",
+      "EXPENSE": "EXPENSE"
+    }
+  }
+}

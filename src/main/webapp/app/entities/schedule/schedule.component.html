@@ -1,0 +1,84 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="tmeApp.schedule.home.title">Schedules</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-schedule" [routerLink]="['/schedule/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="tmeApp.schedule.home.createLabel">
+            Create a new Schedule
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="schedules?.length === 0">
+        <span jhiTranslate="tmeApp.schedule.home.notFound">No schedules found</span>
+    </div>
+    <div class="table-responsive" *ngIf="schedules?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="timeUnity"><span jhiTranslate="tmeApp.schedule.timeUnity">Time Unity</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="frecuencyNumber"><span jhiTranslate="tmeApp.schedule.frecuencyNumber">Frecuency Number</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="dayOfWeek"><span jhiTranslate="tmeApp.schedule.dayOfWeek">Day Of Week</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="sameDay"><span jhiTranslate="tmeApp.schedule.sameDay">Same Day</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="frecuencyOrdinalNumber"><span jhiTranslate="tmeApp.schedule.frecuencyOrdinalNumber">Frecuency Ordinal Number</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="dueDate"><span jhiTranslate="tmeApp.schedule.dueDate">Due Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="limitDate"><span jhiTranslate="tmeApp.schedule.limitDate">Limit Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="scheduleStatus"><span jhiTranslate="tmeApp.schedule.scheduleStatus">Schedule Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="transaction.id"><span jhiTranslate="tmeApp.schedule.transaction">Transaction</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="notification.id"><span jhiTranslate="tmeApp.schedule.notification">Notification</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <tr *ngFor="let schedule of schedules ;trackBy: trackId">
+                <td><a [routerLink]="['/schedule', schedule.id, 'view' ]">{{schedule.id}}</a></td>
+                <td jhiTranslate="{{'tmeApp.TimeUnity.' + schedule.timeUnity}}">{{schedule.timeUnity}}</td>
+                <td>{{schedule.frecuencyNumber}}</td>
+                <td>{{schedule.dayOfWeek}}</td>
+                <td>{{schedule.sameDay}}</td>
+                <td>{{schedule.frecuencyOrdinalNumber}}</td>
+                <td>{{schedule.dueDate | date:'mediumDate'}}</td>
+                <td>{{schedule.limitDate | date:'mediumDate'}}</td>
+                <td jhiTranslate="{{'tmeApp.ScheduleStatus.' + schedule.scheduleStatus}}">{{schedule.scheduleStatus}}</td>
+                <td>
+                    <div *ngIf="schedule.transaction">
+                        <a [routerLink]="['/transaction', schedule.transaction?.id, 'view' ]" >{{schedule.transaction?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="schedule.notification">
+                        <a [routerLink]="['/notification', schedule.notification?.id, 'view' ]" >{{schedule.notification?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/schedule', schedule.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/schedule', schedule.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/schedule', { outlets: { popup: schedule.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

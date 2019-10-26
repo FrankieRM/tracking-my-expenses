@@ -1,0 +1,61 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="transaction">
+            <h2><span jhiTranslate="tmeApp.transaction.detail.title">Transaction</span> {{transaction.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="tmeApp.transaction.amount">Amount</span></dt>
+                <dd>
+                    <span>{{transaction.amount}}</span>
+                </dd>
+                <dt><span jhiTranslate="tmeApp.transaction.instant">Instant</span></dt>
+                <dd>
+                    <span>{{transaction.instant}}</span>
+                </dd>
+                <dt><span jhiTranslate="tmeApp.transaction.description">Description</span></dt>
+                <dd>
+                    <span>{{transaction.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="tmeApp.transaction.observations">Observations</span></dt>
+                <dd>
+                    <span>{{transaction.observations}}</span>
+                </dd>
+                <dt><span jhiTranslate="tmeApp.transaction.transactionType">Transaction Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'tmeApp.TransactionType.' + transaction.transactionType}}">{{transaction.transactionType}}</span>
+                </dd>
+                <dt><span jhiTranslate="tmeApp.transaction.category">Category</span></dt>
+                <dd>
+                    <div *ngIf="transaction.category">
+                        <a [routerLink]="['/category', transaction.category?.id, 'view']">{{transaction.category?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="tmeApp.transaction.sourceWallet">Source Wallet</span></dt>
+                <dd>
+                    <div *ngIf="transaction.sourceWallet">
+                        <a [routerLink]="['/wallet', transaction.sourceWallet?.id, 'view']">{{transaction.sourceWallet?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="tmeApp.transaction.destinationWallet">Destination Wallet</span></dt>
+                <dd>
+                    <div *ngIf="transaction.destinationWallet">
+                        <a [routerLink]="['/wallet', transaction.destinationWallet?.id, 'view']">{{transaction.destinationWallet?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/transaction', transaction.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="schedule">
+            <h2><span jhiTranslate="tmeApp.schedule.detail.title">Schedule</span> {{schedule.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="tmeApp.schedule.timeUnity">Time Unity</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'tmeApp.TimeUnity.' + schedule.timeUnity}}">{{schedule.timeUnity}}</span>
+                </dd>
+                <dt><span jhiTranslate="tmeApp.schedule.frecuencyNumber">Frecuency Number</span></dt>
+                <dd>
+                    <span>{{schedule.frecuencyNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="tmeApp.schedule.dayOfWeek">Day Of Week</span></dt>
+                <dd>
+                    <span>{{schedule.dayOfWeek}}</span>
+                </dd>
+                <dt><span jhiTranslate="tmeApp.schedule.sameDay">Same Day</span></dt>
+                <dd>
+                    <span>{{schedule.sameDay}}</span>
+                </dd>
+                <dt><span jhiTranslate="tmeApp.schedule.frecuencyOrdinalNumber">Frecuency Ordinal Number</span></dt>
+                <dd>
+                    <span>{{schedule.frecuencyOrdinalNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="tmeApp.schedule.dueDate">Due Date</span></dt>
+                <dd>
+                    <span>{{schedule.dueDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="tmeApp.schedule.limitDate">Limit Date</span></dt>
+                <dd>
+                    <span>{{schedule.limitDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="tmeApp.schedule.scheduleStatus">Schedule Status</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'tmeApp.ScheduleStatus.' + schedule.scheduleStatus}}">{{schedule.scheduleStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="tmeApp.schedule.transaction">Transaction</span></dt>
+                <dd>
+                    <div *ngIf="schedule.transaction">
+                        <a [routerLink]="['/transaction', schedule.transaction?.id, 'view']">{{schedule.transaction?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="tmeApp.schedule.notification">Notification</span></dt>
+                <dd>
+                    <div *ngIf="schedule.notification">
+                        <a [routerLink]="['/notification', schedule.notification?.id, 'view']">{{schedule.notification?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/schedule', schedule.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
