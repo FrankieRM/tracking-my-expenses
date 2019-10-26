@@ -53,9 +53,8 @@
     "messages": {
       "info": {
         "authenticated": {
-          "prefix": "Si desea ",
-          "link": "iniciar sesión",
-          "suffix": ", puede intentar con las cuentas predeterminadas:<br/>- Administrador (usuario=\"admin\" y contraseña=\"admin\") <br/>- Usuario (usuario=\"user\" y contraseña=\"user\")."
+          "prefix": "Favor de ",
+          "link": "iniciar sesión"
         },
         "register": {
           "noaccount": "¿Aún no tienes una cuenta?",
@@ -136,5 +135,5 @@
     "idexists": "Un/a nuevo/a {{entityName}} no puede tener ID",
     "idnull": "ID inválido"
   },
-  "footer": "™ ToDevs - Technologies Oriented to Develop Solutions - Autor: Frank Rodríguez Mendizábal"
+  "footer": "™ ToDevs | Tecnologías Para Desarrollar Soluciones | Autor: Frank Rodríguez Mendizábal"
 }
