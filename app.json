@@ -1,0 +1,30 @@
+{
+  "addons": [
+    "heroku-postgresql"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "heroku/java"
+    }
+  ],
+  "env": {
+    "MAVEN_CUSTOM_OPTS": {
+      "required": true
+    },
+    "NPM_CONFIG_PRODUCTION": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "name": "tracking-my-expenses",
+  "scripts": {
+  },
+  "stack": "heroku-18"
+}
