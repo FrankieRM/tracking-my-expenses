@@ -126,10 +126,12 @@
             <li ngbDropdown class="nav-item dropdown pointer" display="dynamic" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                 <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="account-menu">
                   <span *ngIf="!getImageUrl()">
-                    <fa-icon icon="user"></fa-icon>
-                    <span jhiTranslate="global.menu.account.main">
+                    <fa-icon icon="user"></fa-icon><!--agregar property para main sin login-->
+                    <span *ngSwitchCase="false" jhiTranslate="global.menu.account.main">
                       Account
                     </span>
+                    <span *ngSwitchCase="true" jhiTranslate="global.menu.account.mainanduser"
+                          [translateValues]="{username: account.login}"> Account "{{account.login}}"</span>
                   </span>
                   <span *ngIf="getImageUrl()">
                       <img [src]="getImageUrl()" class="profile-image rounded-circle" alt="Avatar">

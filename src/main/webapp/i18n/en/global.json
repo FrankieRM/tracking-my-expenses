@@ -15,6 +15,7 @@
       },
       "account": {
         "main": "Account",
+        "mainanduser": "Account \"{{username}}\"",
         "settings": "Settings",
         "password": "Password",
         "sessions": "Sessions",
