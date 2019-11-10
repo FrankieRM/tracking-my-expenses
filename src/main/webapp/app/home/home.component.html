@@ -3,9 +3,12 @@
         <div [ngSwitch]="isAuthenticated()">
             <h1 class="display-6" *ngSwitchCase="false" jhiTranslate="home.title">Welcome to, Tracking My Expenses!</h1>
 
-            <div class="alert alert-success" *ngSwitchCase="true">
-                <span id="home-logged-message" *ngIf="account" jhiTranslate="home.logged.message"
-                    [translateValues]="{username: account.login}"> You are logged in as user "{{account.login}}". </span>
+            <div class="" *ngSwitchCase="true">
+                <button id="jh-create-entity" class="btn btn-primary float-left" [routerLink]="['/wallet']">
+                    <span class="wallet-img"></span>
+                    <br>
+                    <span class="display-5" jhiTranslate="tmeApp.wallet.home.title">Wallets</span>
+                </button>
             </div>
 
             <div class="alert alert-warning" *ngSwitchCase="false">

@@ -10,6 +10,12 @@ Main page styles
   background-size: contain;
 }
 
+.display-5 {
+  font-size: 2.3rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
 /* wait autoprefixer update to allow simple generation of high pixel density media query */
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
   only screen and (-moz-min-device-pixel-ratio: 2),
@@ -20,4 +26,16 @@ Main page styles
     background: url('../../content/images/jhipster_family_member_0.svg') no-repeat center top;
     background-size: contain;
   }
+}
+
+/* ==========================================================================
+Logo styles
+========================================================================== */
+.wallet-img {
+  height: 64px;
+  width: 64px;
+  display: inline-block;
+  vertical-align: middle;
+  background: url('../../content/images/wallet.png') no-repeat center center;
+  background-size: contain;
 }

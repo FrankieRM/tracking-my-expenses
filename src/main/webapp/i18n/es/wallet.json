@@ -2,22 +2,22 @@
   "tmeApp": {
     "wallet": {
       "home": {
-        "title": "Wallets",
-        "createLabel": "Crear nuevo Wallet",
-        "createOrEditLabel": "Crear o editar Wallet",
-        "notFound": "No Wallets found"
+        "title": "Billeteras",
+        "createLabel": "Crear nueva Billetera",
+        "createOrEditLabel": "Crear o editar Billetera",
+        "notFound": "No se han encontrado Billeteras"
       },
-      "created": "Un nuevo Wallet ha sido creado con el identificador {{ param }}",
-      "updated": "Un Wallet ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Wallet ha sido eliminado con el identificador {{ param }}",
+      "created": "Una nueva Billetera ha sido creada con el identificador {{ param }}",
+      "updated": "Una Billetera ha sido actualizada con el identificador {{ param }}",
+      "deleted": "Una Billetera ha sido eliminadoa con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Wallet {{ id }}?"
+        "question": "¿Seguro que quiere eliminar la Billetera {{ id }}?"
       },
       "detail": {
-        "title": "Wallet"
+        "title": "Billetera"
       },
-      "description": "Description",
-      "walletType": "Wallet Type"
+      "description": "Descripción",
+      "walletType": "Tipo de Billetera"
     }
   }
 }
