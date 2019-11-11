@@ -3,11 +3,18 @@
         <div [ngSwitch]="isAuthenticated()">
             <h1 class="display-6" *ngSwitchCase="false" jhiTranslate="home.title">Welcome to, Tracking My Expenses!</h1>
 
-            <div class="" *ngSwitchCase="true">
-                <button id="jh-create-entity" class="btn btn-primary float-left" [routerLink]="['/wallet']">
-                    <span class="wallet-img"></span>
-                    <br>
+            <div class="btn-group btn-group-width" *ngSwitchCase="true">
+                <button class="btn btn-primary btn-width float" [routerLink]="['/wallet']">
+                    <span class="wallet-img"></span><br>
                     <span class="display-5" jhiTranslate="tmeApp.wallet.home.title">Wallets</span>
+                </button>
+                <button class="btn btn-success btn-width float" [routerLink]="['/transaction/new']">
+                    <span class="income-img"></span><br>
+                    <span class="display-5" jhiTranslate="tmeApp.transaction.home.incomes">Create a new Transaction</span>
+                </button>
+                <button class="btn btn-danger btn-width float" [routerLink]="['/transaction/new']">
+                    <span class="expense-img"></span><br>
+                    <span class="display-5" jhiTranslate="tmeApp.transaction.home.expenses">Create a new Transaction</span>
                 </button>
             </div>
 

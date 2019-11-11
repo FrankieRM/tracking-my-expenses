@@ -2,28 +2,30 @@
   "tmeApp": {
     "transaction": {
       "home": {
-        "title": "Transactions",
-        "createLabel": "Crear nuevo Transaction",
-        "createOrEditLabel": "Crear o editar Transaction",
-        "notFound": "No Transactions found"
+        "title": "Transacciónes",
+        "createLabel": "Crear nueva Transacción",
+        "incomes": "Ingresos",
+        "expenses": "Gastos",
+        "createOrEditLabel": "Crear o editar Transacción",
+        "notFound": "No se han encontrado Transacciones"
       },
-      "created": "Un nuevo Transaction ha sido creado con el identificador {{ param }}",
-      "updated": "Un Transaction ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Transaction ha sido eliminado con el identificador {{ param }}",
+      "created": "Una nueva Transacción ha sido creada con el identificador {{ param }}",
+      "updated": "Una Transacción ha sido actualizada con el identificador {{ param }}",
+      "deleted": "Una Transacción ha sido eliminada con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Transaction {{ id }}?"
+        "question": "¿Seguro que quiere eliminar la Transacción {{ id }}?"
       },
       "detail": {
-        "title": "Transaction"
+        "title": "Transacción"
       },
-      "amount": "Amount",
-      "instant": "Instant",
-      "description": "Description",
-      "observations": "Observations",
-      "transactionType": "Transaction Type",
-      "category": "Category",
-      "sourceWallet": "Source Wallet",
-      "destinationWallet": "Destination Wallet"
+      "amount": "Cantidad",
+      "instant": "Fecha y hora",
+      "description": "Descripción",
+      "observations": "Observaciones",
+      "transactionType": "Tipo de Transacción",
+      "category": "Categoría",
+      "sourceWallet": "Billetera de Origen",
+      "destinationWallet": "Billetera de Destino"
     }
   }
 }

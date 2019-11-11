@@ -11,9 +11,17 @@ Main page styles
 }
 
 .display-5 {
-  font-size: 2.3rem;
+  font-size: 2rem;
   font-weight: 300;
   line-height: 1.2;
+}
+
+.btn-group-width {
+  width: 100% !important;
+}
+
+.btn-width {
+  width: 33%;
 }
 
 /* wait autoprefixer update to allow simple generation of high pixel density media query */
@@ -36,6 +44,22 @@ Logo styles
   width: 64px;
   display: inline-block;
   vertical-align: middle;
-  background: url('../../content/images/wallet.png') no-repeat center center;
+  background: url('../../content/images/wallet-128.png') no-repeat center center;
+  background-size: contain;
+}
+.income-img {
+  height: 64px;
+  width: 64px;
+  display: inline-block;
+  vertical-align: middle;
+  background: url('../../content/images/income-128.png') no-repeat center center;
+  background-size: contain;
+}
+.expense-img {
+  height: 64px;
+  width: 64px;
+  display: inline-block;
+  vertical-align: middle;
+  background: url('../../content/images/expense-128.png') no-repeat center center;
   background-size: contain;
 }

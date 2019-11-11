@@ -4,6 +4,8 @@
       "home": {
         "title": "Transactions",
         "createLabel": "Create a new Transaction",
+        "incomes": "Incomes",
+        "expenses": "Expenses",
         "createOrEditLabel": "Create or edit a Transaction",
         "notFound": "No Transactions found"
       },
